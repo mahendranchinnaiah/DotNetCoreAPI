@@ -48,7 +48,7 @@ namespace DatingApp.Api.Controllers
         }
 
 
-        [HttpGet("login")]
+        [HttpPost("login")]
         public async Task<IActionResult> Login(UserForLoginDto userForLoginDto)
         {
            // var isResult = await repository.UserExists(userForLoginDto.UserName);
