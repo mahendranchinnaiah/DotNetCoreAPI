@@ -32,7 +32,7 @@ namespace DatingApp.Api.Controllers
              //var userFromRepo = await repository.Login(registerForNewUSer.UserName.ToLower(),registerForNewUSer.Password);
 
             if (await repository.UserExists(registerForNewUSer.UserName.ToLower()))
-                return BadRequest("User Not Exists");
+                return BadRequest("Username already Exists");
 
             var user = new User { Username = registerForNewUSer.UserName };
             var createdUser = await repository.Register(user, registerForNewUSer.Password);
@@ -52,7 +52,9 @@ namespace DatingApp.Api.Controllers
         public async Task<IActionResult> Login(UserForLoginDto userForLoginDto)
         {
            // var isResult = await repository.UserExists(userForLoginDto.UserName);
-
+        //    try
+        //    {
+        //   throw new Exception("Computer says no!");
            var userFromRepo = await repository.Login(userForLoginDto.Username.ToLower(), userForLoginDto.Password);
 
             if (userFromRepo == null)
@@ -83,8 +85,17 @@ namespace DatingApp.Api.Controllers
             return Ok( new {
                 token = tokenHandler.WriteToken(token)
             }
+            
 
             );
+        //    }
+
+            /*
+           catch
+           {
+               return StatusCode(500,"Computer really says no!");
+           }
+            */
 
 
 
