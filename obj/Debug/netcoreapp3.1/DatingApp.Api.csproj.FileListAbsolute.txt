@@ -51,3 +51,9 @@ C:\Mahendran\Project\Udemy\Dating\DatingApp.Api\bin\Debug\netcoreapp3.1\System.I
 C:\Mahendran\Project\Udemy\Dating\DatingApp.Api\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 C:\Mahendran\Project\Udemy\Dating\DatingApp.Api\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.dll
 C:\Mahendran\Project\Udemy\Dating\DatingApp.Api\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Mahendran\Project\Udemy\Dating\DatingApp.Api\bin\Debug\netcoreapp3.1\Data\UserSeedData.json
+C:\Mahendran\Project\Udemy\Dating\DatingApp.Api\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.JsonPatch.dll
+C:\Mahendran\Project\Udemy\Dating\DatingApp.Api\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+C:\Mahendran\Project\Udemy\Dating\DatingApp.Api\bin\Debug\netcoreapp3.1\Newtonsoft.Json.Bson.dll
+C:\Mahendran\Project\Udemy\Dating\DatingApp.Api\bin\Debug\netcoreapp3.1\AutoMapper.dll
+C:\Mahendran\Project\Udemy\Dating\DatingApp.Api\bin\Debug\netcoreapp3.1\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
