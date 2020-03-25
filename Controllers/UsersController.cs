@@ -5,6 +5,7 @@ using DatingApp.Api.Data;
 using DatingApp.Api.DTOS;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using System;
 
 namespace DatingApp.Api.Controllers
 {
@@ -37,6 +38,27 @@ namespace DatingApp.Api.Controllers
             var usertoReturn = Mapper.Map<UserForDetailedDto>(user);
             return Ok(usertoReturn);
         }
+
+        
+        [HttpPut("{id}")]
+        public async Task<IActionResult> UpdateUser(int id,UserForUpdateDto userForUpdateDto)
+        {
+            /*
+             if(id!=int.Parse(User.FindFirst(ClaimTypes.NameIdentifier).Value))
+                 return Unauthorized();
+                */
+                
+            var userFromRepo = await Repository.GetUser(id);
+            
+            Mapper.Map(userForUpdateDto, userFromRepo);
+
+            if(await Repository.SaveAll())
+                return NoContent();
+            
+            throw new Exception($"Updating user {id} failed on save");
+
+        }
+    
 
     }
 }
