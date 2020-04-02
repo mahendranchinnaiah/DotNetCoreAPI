@@ -57,3 +57,4 @@ C:\Mahendran\Project\Udemy\Dating\DatingApp.Api\bin\Debug\netcoreapp3.1\Microsof
 C:\Mahendran\Project\Udemy\Dating\DatingApp.Api\bin\Debug\netcoreapp3.1\Newtonsoft.Json.Bson.dll
 C:\Mahendran\Project\Udemy\Dating\DatingApp.Api\bin\Debug\netcoreapp3.1\AutoMapper.dll
 C:\Mahendran\Project\Udemy\Dating\DatingApp.Api\bin\Debug\netcoreapp3.1\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+C:\Mahendran\Project\Udemy\Dating\DatingApp.Api\bin\Debug\netcoreapp3.1\CloudinaryDotNet.dll
