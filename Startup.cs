@@ -67,6 +67,8 @@ namespace DatingApp.Api
             }
             );
 
+            services.AddScoped<LogUserActivity>();
+            
             
 
         }
