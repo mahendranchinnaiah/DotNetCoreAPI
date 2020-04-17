@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using DatingApp.Api.Helpers;
+using System.Security.Claims;
 
 namespace DatingApp.Api.Controllers
 {
@@ -26,10 +27,23 @@ namespace DatingApp.Api.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> GetUsers()
+        public async Task<IActionResult> GetUsers([FromQuery]UserParams userParams)
         {
-            var user = await Repository.GetAllUsers();
+
+             var currentUserId =int.Parse(User.FindFirst(ClaimTypes.NameIdentifier).Value);
+             var userFromRepo = await Repository.GetUser(currentUserId);
+             userParams.UserId = currentUserId;
+             if(string.IsNullOrEmpty(userParams.Gender))
+             {
+                 userParams.Gender = userFromRepo.Gender == "male" ? "female": "male";
+             }
+
+            var user = await Repository.GetAllUsers(userParams);
             var usertoList = Mapper.Map<IEnumerable<UserForListDto>>(user);
+            
+            Response.AddPagination(user.CurrentPage, user.PageSize,
+             user.TotalCount, user.TotalPages);
+
             return Ok(usertoList);
         }
 
@@ -45,10 +59,10 @@ namespace DatingApp.Api.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> UpdateUser(int id,UserForUpdateDto userForUpdateDto)
         {
-            /*
+            
              if(id!=int.Parse(User.FindFirst(ClaimTypes.NameIdentifier).Value))
                  return Unauthorized();
-                */
+                
                 
             var userFromRepo = await Repository.GetUser(id);
             
